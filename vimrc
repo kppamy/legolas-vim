@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 set backspace=indent,eol,start
 filetype off                  " required
+set relativenumber
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -145,7 +146,7 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " let g:ycm_filetype_whitelist = { 'python': 1 }
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 map <C-G>  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Vim's autocomplete is excruciatingly slow
 " http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
@@ -175,7 +176,7 @@ au BufNewFile,BufRead *.go
 \ set nolist
 
 "python with virtualenv support
-py << EOF
+python3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
