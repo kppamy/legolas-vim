@@ -222,6 +222,16 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+" open on startup
+autocmd vimenter * NERDTree
+" open on startup
+autocmd TabEnter * NERDTree
+" close automatically if the last window is close
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufNew * wincmd l
+" Go to previous (last accessed) window.
+autocmd VimEnter * wincmd p
+
 
 " for powerline
 set laststatus=2
